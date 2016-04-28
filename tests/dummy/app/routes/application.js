@@ -14,6 +14,23 @@ export default Ember.Route.extend({
 				},
 				// list the dragula events that you want to support here
 				enabledEvents: ['drag', 'drop']
+			},
+			'copyoptions':{
+				// dragula options see the follwing for a description of each:
+				// https://github.com/bevacqua/dragula#usage
+				'options':{
+					// only copy from the source container
+					copy: function(el, source) {
+						return source.className.indexOf('souce-container') > -1;
+					},
+					// only allow drop into target container
+					accepts: function(el, target) {
+						console.log(el, target);
+						return target.className.indexOf('target-container') > -1;
+					}
+				},
+				// list the dragula events that you want to support here
+				enabledEvents: ['drop']
 			}
 		};
 	},
