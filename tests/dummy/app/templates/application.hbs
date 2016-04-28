@@ -33,13 +33,13 @@
 {{/ember-dragula}}
 <h2>Copy Example</h2>
 <p>Copy items from Source Container to Destination Container</p>
-{{#ember-dragula config=model.copyoptions}}
+{{#ember-dragula config=model.copyoptions drop="onDrop"}}
 	<h3>Source Container</h3>
 	{{#ember-dragula-container class="souce-container"}}
-		{{#tree-component data='1st copyable item (this is an Ember component)'}}
+		{{#tree-component data='1st copyable item (this is an Ember component)' class="handle"}}
 		{{/tree-component}}
-		<div>
-			Container 1 - 2nd copyable item (this is an element)
+		<div class="handle">
+			2nd copyable item (this is an element)
 		</div>
 	{{/ember-dragula-container}}
 	<h3>Destination Container</h3>
